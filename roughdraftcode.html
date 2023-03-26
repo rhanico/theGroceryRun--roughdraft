@@ -4,45 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Grocery Run!</title>
     <link rel="stylesheet" href="thegroceryRun.css">
 </head>
 <body>
 
                                                         <!-- THIS IS THE LOADING PAGE OF THE WEB GAME-->
     <header>
-        <div id="welcomePage">
+        <div id="loadingPage">
+            <div id="pageLoading">
                 <img id="welconeLogo" src="./images/logo.png" alt="main logo">
+            </div>
         </div>
     </header>
 
+<!------>
                                                                 <!-- MAIN PAGE/HOME PAGE-->
-    <main>
-        <div id="mainNav">
-            <nav>
+    <body>
+        <div class="navbars">
+            <nav >
                 <ul>
                     <li> HOME </li>
-                    <li> CHARACTERS </li>
-                    <li> ABOUT </li>
+                    <li> PLAY </li>
+                    <li> SETTING </li>
                 </ul>
             </nav>
         </div>
+        <div class="welcomePage">
+            <div id="welcomeBanner">
+                <p> WELCOME!</p>
+                <p> WELCOME!</p>
+                <p> WELCOME!</p>
+                <p> WELCOME!</p>
+                <p> WELCOME!</p>
+                <p> WELCOME!</p>
+        </div>
         <div id="homeScreenDiv">
-            <img id="homeScreenlogo" src="./images/homeScreenlogo.png" alt="Home Screen image">
-            <img src="./images/Shelves.png" alt="Home Screen Shelves backround">
-        </div>
-        <div id="playerRegistraButton">
-            <label id="userName">Create a Username</label><br>
-            <input type="text" id="userNameInput"><br>
-            <button type="butto" id="userNameSubButtun">Submit</button><br>
-
-                                     <!-- START BUTTION//PLAYER MUST CREATE A USERNAME TO PLAY-->        
-            <div id="startShopButton">
-                <button type="button"> START SHOPPING! </button>
+            <div>
+                <img id="homeScreenlogo" src="./images/homeScreenlogo.png" alt="Home Screen image">
             </div>
+            <div id="playerRegistraButton">
+                <label id="userName">Create a Username</label><br>
+                <input type="text" id="userNameInput"><br>
+    
+                                         <!-- START BUTTION//PLAYER MUST CREATE A USERNAME TO PLAY-->       
 
+                <div id="startShopButton">
+                    <button type="button"> START SHOPPING! </button>
+                </div>
         </div>
-    </main>
+        <div class="pages">
+            <canvas>
+
+            </canvas>
+        </div>
+
+
+
+
+
+    </body>
+    
     <footer>
     
     </footer>

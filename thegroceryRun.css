@@ -1,14 +1,52 @@
-html,body {
+*{
     background-color: #f8c02e;
     margin: 0;
-    border: 0;
-   padding: 0;
-;
-}
-#welcomeLogo{
-    margin: 0;
     padding: 0;
-    height: 10%;
-    width: 20%;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.pages{
+    margin: 50px, 50px, 70, 50px;
+    padding: 50px,50px,100px,50px;
+    border: 
+
 
 }
+
+
+img{
+    height:1000px;
+    width: auto;
+}
+
+
+nav{
+    padding: 10px ;
+}
+li{
+    display: inline-block;
+    margin-left: 100px;
+    margin-right: 0px;;
+
+    color: black;
+}
+
+#welcomeBanner {
+    margin: 25px;
+    background-color: whitesmoke;
+}
+p{
+    margin: 30px;
+    background-color: ;
+    display: inline-block;
+    margin-left: 100px;
+    margin-right: 0px;;
+    color: black;
+    font-size: 20px;
+
+}
+
+
