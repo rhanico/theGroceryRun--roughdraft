@@ -1,14 +1,14 @@
 
                 // canvas variables.
 let gameWindow;
-let gameWindowWidth = 2000;
+let gameWindowWidth = 1000;
 let gameWindowHeight = 1300;
 let windowContent;
 
                 // player variables.
-let playerWidth;
-let playerHeight;
-let playerX;
+let playerWidth = 100;
+let playerHeight = 160;
+let playerX = 200;
 let playerY = gameWindowHeight - playerHeight;
 let playerCharacter;
 
@@ -42,23 +42,13 @@ window.onload = function() {
     gameWindow.width = gameWindowWidth;
     gameWindow.height = gameWindowHeight;
 
-    console.log(gameWindow);
-
-    windowContent = gameWindow.getContext("2d");  //this will used to draw on the canvas.
-
-    
-    windowContent.fillStyle="red";
-
-
-
-    windowContent.fillRect(player.x, player.y, player.width, player.height);
-
+             windowContent = gameWindow.getContext("2d");  //this will used to draw on the canvas.
 
 
 
                // this is my playerCharacter - .onload function.
     playerCharacter = new Image();
-    player.src = "";
+    player.src = "./img/Resting.png";
     playerCharacter.onload = function(){
 
         windowContent.drawImage(playerCharacter,player.x, player.y, player.width, player.height);
@@ -92,9 +82,8 @@ function loadCharacters() {
                // obstaleBoxes .draw function
     for ( let i = 0; i < obstacleBoxes.length; i++) {
 
-        let obstacleRandomBoxes = obstacleBoxes[ i ];
-        windowContent.drawImage(obstacleBoxes.x, obstacleBoxes.y, obstacleBoxes.width, obstacleBoxes.height);
-
+        let obstacleRandomBoxes = obstacleBoxes[i];
+        
     }
 }
 
