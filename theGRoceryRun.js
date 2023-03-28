@@ -3,7 +3,7 @@
 let gameWindow;
 let gameWindowWidth = 2000;
 let gameWindowHeight = 1300;
-let windoContent;
+let windowContent;
 
                 // player variables.
 let playerWidth;
@@ -44,8 +44,16 @@ window.onload = function() {
 
     console.log(gameWindow);
 
+    windowContent = gameWindow.getContext("2d");  //this will used to draw on the canvas.
 
-    windowContent = gameWindow.getContext("2d");
+    
+    windowContent.fillStyle="red";
+
+
+
+    windowContent.fillRect(player.x, player.y, player.width, player.height);
+
+
 
 
                // this is my playerCharacter - .onload function.
@@ -88,9 +96,6 @@ function loadCharacters() {
         windowContent.drawImage(obstacleBoxes.x, obstacleBoxes.y, obstacleBoxes.width, obstacleBoxes.height);
 
     }
-
-
-
 }
 
 function runObstacleBoxes() {
