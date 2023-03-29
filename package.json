@@ -1,0 +1,25 @@
+{
+  "name": "the-grocery-run",
+  "version": "1.0.0",
+  "description": "My Web Browser Miles Stone Project 2023 - \" The Grocery Run! \".",
+  "main": "playerC.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rhanico/theGroceryRun-webGame.git"
+  },
+  "keywords": [
+    "web",
+    "game",
+    "browser",
+    "game"
+  ],
+  "author": "Franz Rhanico Domingo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rhanico/theGroceryRun-webGame/issues"
+  },
+  "homepage": "https://github.com/rhanico/theGroceryRun-webGame#readme"
+}
