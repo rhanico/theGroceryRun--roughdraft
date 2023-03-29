@@ -1,14 +1,15 @@
-
-                // canvas variables.
+ /*
+ 
+ // canvas variables.
 let gameWindow;
-let gameWindowWidth = 1000;
-let gameWindowHeight = 1300;
+let gameWindowWidth = 750;
+let gameWindowHeight = 250;
 let windowContent;
 
                 // player variables.
-let playerWidth = 100;
-let playerHeight = 160;
-let playerX = 200;
+let playerWidth = 88;
+let playerHeight = 94;
+let playerX = 50;
 let playerY = gameWindowHeight - playerHeight;
 let playerCharacter;
 
@@ -23,10 +24,10 @@ let player = {
                 //obstacles boxes variables with array.
 let obstacleBoxes = [];
 
-let obstacleBoxesOneWidth = 100;
-let obstacleBoxesTwoWidth = 150;
+let obstacleBoxesOneWidth = 34;
+let obstacleBoxesTwoWidth = 69;
 
-let obstacleBoxesHeight = 300;
+let obstacleBoxesHeight = 70;
 let obstacleBoxesX = 700;
 let obstacleBoxesY = gameWindowHeight - obstacleBoxesHeight;
 
@@ -45,76 +46,77 @@ window.onload = function() {
              windowContent = gameWindow.getContext("2d");  //this will used to draw on the canvas.
 
 
-
                // this is my playerCharacter - .onload function.
     playerCharacter = new Image();
-    player.src = "./img/Resting.png";
-    playerCharacter.onload = function(){
-
+    playerCharacter.src="./images/Resting.png";
+    playerCharacter.onload = function() {
+        
         windowContent.drawImage(playerCharacter,player.x, player.y, player.width, player.height);
     }
 
 
+    
+
                 // this my obstacleBoxes - .onload function.
+    
     obstacleBoxOneIcon = new Image();
-    obstacleBoxOneIcon.src = "";
+    obstacleBoxOneIcon.src = "./images/obstacleOne.jpeg";
 
     obstacleBoxTwoIcon = new Image();
-    obstacleBoxTwoIcon.src = "";
-
+    obstacleBoxTwoIcon.src = "./images/obstacleTwo.jpeg";
 
 
     requestAnimationFrame( loadCharacters );
     setInterval( runObstacleBoxes, 1000);
-
 }
-
-
 
 
 
 function loadCharacters() {
     requestAnimationFrame( loadCharacters );
-
                 // player .draw funtion
     windowContent.drawImage(playerCharacter, player.x, player.y, player.width, player.height);
-
-               // obstaleBoxes .draw function
+               // obstaleBoxes .draw function/ looping the obstacleBoxes.
     for ( let i = 0; i < obstacleBoxes.length; i++) {
-
-        let obstacleRandomBoxes = obstacleBoxes[i];
-        
+        let randomBoxes = obstacleBoxes[i];
+        windowContent.drawImage(randomBoxes.Image,randomBoxes.x, randomBoxes.y,randomBoxes.width, randomBoxes.height);
+       
     }
 }
 
+
 function runObstacleBoxes() {
 
-    let obstacleRandomBoxes ={
+    let randomBoxes = {
         img : null,
         x: obstacleBoxesX,
         y: obstacleBoxesY,
         width: null,
         height: obstacleBoxesHeight
-
     }
-    
-    let runObstaclesBoxesRandom = Math.random();
+                 // this function give a value betwon 0 - 0.9999...
+    let runRandomBoxes = Math.random(); 
 
-    if ( runObstaclesBoxesRandom > .20 ) {
-        obstacleRandomBoxes.img = obstacleBoxesTwoIcon;
-        obstacleRandomBoxes.width = obstacleBoxesTwoWidth;
+    if ( runRandomBoxes> .20 ) {
+        randomBoxes.img = obstacleBoxesTwoIcon;
+        randomBoxes.width = obstacleBoxesTwoWidth;
         obstacleBoxes.push( obstacleBoxes );
-    }
-
-    else if ( runObstaclesBoxesRandom > .10) {
-        obstacleRandomBoxes.img = obstacleBoxesOneIcon;
-        obstacleRandomBoxes.width = obstacleBoxesOneWidth;
-        obstacleBoxes.push( obstacleBoxes );
+                // 80% chance of getting obstacleBoxesTwo.
     }
 
-    else if ( runObstaclesBoxesRandom > .90) {
+    else if ( runRandomBoxes> .10) {
+        randomBoxes.img = obstacleBoxesOneIcon;
+        randomBoxes.width = obstacleBoxesOneWidth;
         obstacleBoxes.push( obstacleBoxes );
+                // 90% chance of getting obstacleBoxesOne.
+    }
+
+    else if ( runRandomBoxes > .90) {
+        obstacleBoxes.push( obstacleBoxes );
+                // 10% chance of getting NONE.
     }
 
 
 }
+
+*/

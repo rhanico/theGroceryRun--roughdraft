@@ -9,8 +9,10 @@
 
 
 .pages{
-    margin: 50px, 50px, 70, 50px;
-    padding: 50px,50px,100px,50px;
+    display: flex-row;
+    flex-shrink: 3;
+    justify-content: space-evenly;
+
 }
 
 
