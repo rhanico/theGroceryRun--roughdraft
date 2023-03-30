@@ -1,3 +1,4 @@
+
 import Player from "./playerC.js";
 // this is calling our canvas tag to our js
 const canvas = document.getElementById("gameWindow");

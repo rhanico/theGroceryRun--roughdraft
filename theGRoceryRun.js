@@ -1,4 +1,3 @@
- /*
  
  // canvas variables.
 let gameWindow;
@@ -118,5 +117,3 @@ function runObstacleBoxes() {
 
 
 }
-
-*/

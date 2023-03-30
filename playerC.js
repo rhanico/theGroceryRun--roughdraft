@@ -1,3 +1,4 @@
+
 class Player {
     constructor (content, height, minJumpHeight, maxJumpheight, canvasRatio){
         this.content = content;
