@@ -64,29 +64,54 @@ window.onload = function() {
 
     requestAnimationFrame(boxAnimation);
     setInterval (animateRandomBoxes, 1000);
+    document.addEventListener("keydown", movePlayer);
 }
 
 function boxAnimation(){
+    if (gameOver) {
+        return;
+    }
     requestAnimationFrame(boxAnimation);
 
     context.clearRect ( 0, 0, canvas.width, canvas.height );
                                                     //player
-    context.drawImage (
-        playerImg, player.x, player.y, player.width,  player.height
-        );
-
+    speedY += gravity;
+    player.y = Math.min( player.y + speedY, playerY); // this will ensure player will stay down after jumping.
+    
+    context.drawImage ( playerImg, player.x, player.y, player.width,  player.height );
                                                     //boxes
     for ( let i = 0; i < randomBoxes.length; i++) {
         let boxes = randomBoxes [i];
         boxes.x += speedX;
-        context.drawImage ( 
-            boxes.img, boxes.x, boxes.y, boxes.width, boxes.height
-        );
+        context.drawImage(boxes.img, boxes.x, boxes.y, boxes.width, boxes.height);
+
+        if(whenCollission(player, boxes)) {
+            gameOver = true;
+            playerImg.src ="./images/milk.png"
+            playerImg.onload = function(){
+                context.drawImage(playerImg, player.x, player.y, player.width, player.height);
+            }
+        }
+    }
+}
+
+function movePlayer(e) {
+
+    if (gameOver) {
+        return;
+    }
+
+    if ((e.code == "Space" || e.code == "ArrowUp") && player.y == playerY) {
+        speedY = -20;
     }
 }
 
 
 function animateRandomBoxes (){
+
+    if (gameOver) {
+        return;
+    }
 
     let boxes = {
         img : null,
@@ -113,3 +138,14 @@ function animateRandomBoxes (){
         randomBoxes.shift();        // this will help limit randomBoxes's "array-objrects" to accumalate up to 5.
     }
 }
+
+function whenCollission( a, b ) {      // this will be when player hit obstcle.
+    return  a.x < b.width &&
+            a.x + a.width > b.x &&
+            a.y < b.y + b.height &&
+            a.y + a.height > b.y;
+}
+
+
+
+
