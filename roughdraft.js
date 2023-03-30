@@ -1,8 +1,19 @@
-
-import Player from "./playerC.js";
+//import Player from "./playerC.js";
+class Player {
+    constructor (content, height, minJumpHeight, maxJumpheight, canvasRatio){
+        this.content = content;
+        this.canvas = content.canvas;
+        this.width = width;
+        this.height = height;
+        this.minJumpHeight = minJumpHeight;
+        this.maxJumpheight = maxJumpheight;
+        this.canvasRatio = canvasRatio;
+    }
+}
 // this is calling our canvas tag to our js
 const canvas = document.getElementById("gameWindow");
 const content = canvas.getContext("2d");
+
 
     //this is our canvas constant variable dimention measurements.
 const CANVAS_WIDTH = 750;

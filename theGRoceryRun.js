@@ -1,5 +1,3 @@
- 
- // canvas variables.
 let gameWindow;
 let gameWindowWidth = 750;
 let gameWindowHeight = 250;
@@ -52,23 +50,18 @@ window.onload = function() {
         
         windowContent.drawImage(playerCharacter,player.x, player.y, player.width, player.height);
     }
-
-
-    
-
                 // this my obstacleBoxes - .onload function.
     
     obstacleBoxOneIcon = new Image();
-    obstacleBoxOneIcon.src = "./images/obstacleOne.jpeg";
+    obstacleBoxOneIcon.src = "";
 
     obstacleBoxTwoIcon = new Image();
-    obstacleBoxTwoIcon.src = "./images/obstacleTwo.jpeg";
+    obstacleBoxTwoIcon.src = "";
 
 
     requestAnimationFrame( loadCharacters );
-    setInterval( runObstacleBoxes, 1000);
+    setInterval( runObstacleBoxes, 1000); //1 sec
 }
-
 
 
 function loadCharacters() {
@@ -78,8 +71,16 @@ function loadCharacters() {
                // obstaleBoxes .draw function/ looping the obstacleBoxes.
     for ( let i = 0; i < obstacleBoxes.length; i++) {
         let randomBoxes = obstacleBoxes[i];
-        windowContent.drawImage(randomBoxes.Image,randomBoxes.x, randomBoxes.y,randomBoxes.width, randomBoxes.height);
-       
+
+       /* windowContent.drawImage(
+            randomBoxes.Image,
+            randomBoxes.x, 
+            randomBoxes.y,
+            randomBoxes.width, 
+            randomBoxes.height);
+       */
+            windowContent.drawImage(randomBoxes.img, randomBoxes.x, randomBoxes.y, randomBoxes.width, randomBoxes.height);
+
     }
 }
 
